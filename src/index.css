@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans antialiased;
+    @apply bg-white dark:bg-dark-950 text-gray-900 dark:text-gray-100;
+    @apply transition-colors duration-200;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-dark-800;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-dark-600 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-dark-500;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  /* Glassmorphism effect */
+  .glass {
+    @apply backdrop-blur-md bg-white/10 dark:bg-dark-800/10;
+    @apply border border-white/20 dark:border-dark-600/20;
+    @apply shadow-glass dark:shadow-glass-dark;
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-500 to-neon-purple bg-clip-text text-transparent;
+  }
+  
+  /* Neon glow effect */
+  .neon-glow {
+    @apply shadow-neon;
+  }
+  
+  .neon-glow-purple {
+    @apply shadow-neon-purple;
+  }
+  
+  /* Button base styles */
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium;
+    @apply transition-all duration-200 ease-in-out;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary-600 hover:bg-primary-700 text-white;
+    @apply focus:ring-primary-500 shadow-lg hover:shadow-xl;
+    @apply transform hover:scale-105 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-gray-100 hover:bg-gray-200 text-gray-900;
+    @apply dark:bg-dark-800 dark:hover:bg-dark-700 dark:text-gray-100;
+    @apply focus:ring-gray-500;
+  }
+  
+  .btn-ghost {
+    @apply btn text-gray-700 hover:bg-gray-100;
+    @apply dark:text-gray-300 dark:hover:bg-dark-800;
+    @apply focus:ring-gray-500;
+  }
+  
+  /* Card base styles */
+  .card {
+    @apply bg-white dark:bg-dark-900 rounded-xl shadow-lg;
+    @apply border border-gray-200 dark:border-dark-700;
+    @apply transition-all duration-200 hover:shadow-xl;
+  }
+  
+  .card-glass {
+    @apply card glass;
+  }
+  
+  /* Input base styles */
+  .input {
+    @apply w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-dark-600;
+    @apply bg-white dark:bg-dark-800 text-gray-900 dark:text-gray-100;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+    @apply transition-all duration-200;
+    @apply placeholder-gray-500 dark:placeholder-gray-400;
+  }
+  
+  /* Loading skeleton */
+  .skeleton {
+    @apply animate-pulse bg-gray-200 dark:bg-dark-700 rounded;
+  }
+  
+  /* Chart container */
+  .chart-container {
+    @apply w-full h-full min-h-[300px] p-4;
+    @apply bg-white dark:bg-dark-900 rounded-lg;
+    @apply border border-gray-200 dark:border-dark-700;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s linear infinite;
+  }
+}
